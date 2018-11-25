@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Assistant:300,400,700');
+html, body{
+	width:100%;
+	height:100%;
+	font-family:"assistant";
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizeLegibility;
+		
+}
+div{
+	box-sizing:border-box;
+}
+.phone{
+	width:100%;
+	height:100%;
+	max-width:375px;
+	max-height: 812px;
+	background:#fff;
+	margin: 0 auto;
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+}
+.screenwrapper{
+	position:relative;
+	transform:translateY(-50%);
+	top:50%;
+	margin:0 auto;
+	
+}
+.titleimg{
+	width:255px;
+	max-width:100%;
+	height:255px;
+	border:10px solid #ededed;
+	border-radius:128px;
+	margin: 0 auto 74px;
+	
+	
+}
+.button{
+	width:90%;
+	color:#fff;
+	font-size:16px;
+	font-weight:500;
+	padding: 20px 0;
+	text-align: center;
+	margin:22px auto ;
+	max-width:255px;
+	border-radius:128px;
+	
+}
+
+.dark{
+	background:#969696;
+}
+.light{
+	background:#c1c1c1;
+}
