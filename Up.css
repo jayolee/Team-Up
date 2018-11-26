@@ -8,7 +8,7 @@ html, body{
 	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
   	text-rendering: optimizeLegibility;
-	letter-spacing: 
+	letter-spacing: .1px;
 		
 }
 div{
@@ -21,7 +21,7 @@ a{
 	position:absolute;
 	top:20px;
 	font-size:18px;
-	color:#ccc;
+	color:#7B7B7B;
 	width:100%;
 	text-align: center;
 }
@@ -258,6 +258,9 @@ position:relative;
 	padding-left:0;
 	font-size:23px;
 }
+.timeunit li{
+	cursor: pointer;
+}
 #hr, #min, #sec{
 	top:50%;
 	transform:translateY(-37px);
@@ -272,27 +275,40 @@ position:relative;
 	position:relative;
 	padding:0;
 }
+.settime{
+	position:absolute;
+	text-align:left;
+	top:50%;
+	left:50%;
+	transform:translateX(-50%) translateY(-50%);
+	font-size:60px;
+	color:#969696;
+	font-weight: 600;
+}
 .circle{
 	height:280px;
 	width:280px;
 	margin:0 auto;
 	top:-11px;
 	left:50%;
-	transform:translateX(-50%);
+	transform:translateX(-50%) rotateY(-180deg) rotateZ(-90deg);
 	position:absolute;
 }
 circle{
+	
+stroke-dasharray: 840px;
+stroke-dashoffset: 0px;
 	stroke:#969696;
 	stroke-width:10px;
 	fill:none;
-	animation: countdown 10s linear infinite forwards;
+	animation: countdown linear forwards;
 }
 
 @keyframes countdown {
-  from {
-    stroke-dashoffset: 0px;
-  }
+	from{
+		stroke-dashoffset:0px;
+	}
   to {
-    stroke-dashoffset: 521px;
+    stroke-dashoffset:840px;
   }
 }

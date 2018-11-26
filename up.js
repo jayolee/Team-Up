@@ -58,12 +58,22 @@ function sc2() {
 }
 
 function sc3() {
+	
 	let curpos = 0;
 	let seclist = $('#sec').find('li');
 
 	$('#sec li').click(function () {
 		let list = $(this).text();
 		list = parseInt(list);
+		
+		let btnlist=$(".rndbtn_wrapper a");
+		if(list != 0){
+			$(btnlist[1]).attr('href','sc4.html');
+		}
+		else{
+			$(btnlist[1]).attr('href','#');
+		}
+		
 		if(list<6){
 		if (list > curpos) {
 			let toppx = 30 * (list - curpos);
@@ -95,6 +105,19 @@ function sc3() {
 }
 
 function sc4(){
-	curpose=localStorage.getItem("curpos");
+	let curpos=localStorage.getItem("curpos");
+	let timer=curpos;
+	$('circle').css('animation-duration', timer+'s');
+	$('.settime').text('00:0'+timer);
+	let i=1;
+	var ticking=
+	setInterval(function(){
+		timer = --timer < 0 ? curpos: timer;
+		$('.settime').text('00:0'+timer);
+	},1000);
+
+	setTimeout(function(){
+		clearInterval(ticking);
+	}, 1000*curpos);
 
 }
