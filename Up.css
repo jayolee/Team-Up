@@ -177,6 +177,7 @@ position:relative;
 	width:310px;
 	margin:80px auto 14px;
 	height:140px;
+	transition:.3s;
 }
 .rnd_button{
 	width:88px;
@@ -274,6 +275,7 @@ position:relative;
 	margin:0 auto;
 	position:relative;
 	padding:0;
+	z-index: -999;
 }
 .settime{
 	position:absolute;
@@ -293,6 +295,7 @@ position:relative;
 	left:50%;
 	transform:translateX(-50%) rotateY(-180deg) rotateZ(-90deg);
 	position:absolute;
+	z-index: 999;
 }
 circle{
 	
@@ -311,4 +314,21 @@ stroke-dashoffset: 0px;
   to {
     stroke-dashoffset:840px;
   }
+}
+.timersc{
+	position:absolute;
+	transform:translateY(-80px);
+}
+
+.btn_wrapper{
+	margin:80px auto 14px;
+	height:140px;
+	transition:.5s;
+	display:none;
+	opacity:0;
+}
+.outline{
+	color:#969696;
+	border:5px solid #969696;
+	padding:13px 0;
 }

@@ -109,7 +109,7 @@ function sc4(){
 	let timer=curpos;
 	$('circle').css('animation-duration', timer+'s');
 	$('.settime').text('00:0'+timer);
-	let i=1;
+
 	var ticking=
 	setInterval(function(){
 		timer = --timer < 0 ? curpos: timer;
@@ -118,6 +118,15 @@ function sc4(){
 
 	setTimeout(function(){
 		clearInterval(ticking);
-	}, 1000*curpos);
+		$('.rndbtn_wrapper').css('opacity','0');
+		
+		setTimeout(function(){
+		$('.rndbtn_wrapper').css('display','none');
+		 $('.btn_wrapper').css({
+			 'display': 'block',
+			 'opacity': '1'
+		 });},300);
+		
+	}, (1000*curpos)+1);
 
 }
