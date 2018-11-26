@@ -127,6 +127,52 @@ function sc4(){
 			 'opacity': '1'
 		 });},300);
 		
-	}, (1000*curpos)+1);
+	}, (1000*curpos)+10);
 
+}
+
+function sc6(){
+	let countnum=0;
+	$('.sectitle').text('Inhale');
+		setTimeout(function(){
+			$('.sectitle').text('Hold')
+		},3500);
+		setTimeout(function(){
+			$('.sectitle').text('Exhale');
+			$('#balloon').css('width','100%');
+		},5500);
+		
+		let blnpos=129;
+	let runactivity= setInterval(function(){
+		
+		let blnwidth=$('#balloon').css('width');
+		let blnpos=$('.blnwrapper').css('top');
+		blnpos=parseInt(blnpos);
+		blnpos-=20;
+		blnwidth=parseInt(blnwidth);
+			$('.sectitle').text('Inhale');
+		setTimeout(function(){
+			$('.sectitle').text('Hold')
+		},3500);
+		setTimeout(function(){
+			$('.sectitle').text('Exhale');
+			$('#balloon').css('width',blnwidth+25+'px')
+			$('.blnwrapper').css('top',blnpos+'px');
+		},5500);
+		countnum +=1;
+		if (countnum == 3){
+		clearInterval(runactivity);
+	}
+	}, 9000);
+	
+	
+	
+	setTimeout(function(){
+		$('.timer').css('border','0px');
+		$('.sectitle').text('Oh?');
+		setTimeout(function(){
+		$('.blnwrapper').css('animation','floating linear 3s forwards');
+		$('.saveanimal').css('animation','floating linear 3s forwards');},300);
+	},36000);
+	
 }

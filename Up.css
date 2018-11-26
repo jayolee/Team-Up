@@ -332,3 +332,87 @@ stroke-dashoffset: 0px;
 	border:5px solid #969696;
 	padding:13px 0;
 }
+/*Sc5*/
+#balloonex{
+	width:150px;
+	margin:0 auto;
+	display:block;
+}
+.narrow{
+	width:90%;
+	max-width:300px;
+	margin:0 auto 60px;
+	text-align:center;
+}
+
+/*sc6*/
+
+
+.bln_circle{
+	height:280px;
+	width:280px;
+	margin:0 auto;
+	top:-11px;
+	left:50%;
+	transform:translateX(-50%) rotateY(-180deg) rotateZ(-90deg);
+	position:absolute;
+	z-index: 1;
+}
+.bln_circle circle{
+	
+stroke-dasharray: 840px;
+stroke-dashoffset: 0px;
+	stroke:#969696;
+	stroke-width:10px;
+	fill:none;
+	animation: inhale linear 9s 4 forwards;
+}
+.hold{
+	width:138px;
+	height:138px;
+	left:50%;
+	top:129px;
+}
+.hold circle{
+	stroke:#FF5146;
+	animation: inhale linear 9s 4 forwards;
+}
+
+@keyframes inhale {
+	from{
+		stroke-dashoffset:0px;
+	}
+  to {
+    stroke-dashoffset:840px;
+  }
+}
+@keyframes floating {
+	from{transform:translateX(-50%) translateY(-50%);
+		
+	}
+	to{
+		transform:translateX(-50%) translateY(-250%);
+	}
+}
+.addani{
+	animation: floating linear 3s forwards;
+}
+#balloon{
+	width:80%;
+	transition:3s;
+	z-index: -999;
+}
+.blnwrapper{
+	z-index:-9;
+	text-align:center;
+	top:calc(50% + 100px);
+	transition: 3s;
+}
+.saveanimal{
+	position:absolute;
+	bottom:-71%;
+	left:50%;
+	width:50%;
+	max-width:150px;
+	
+}
