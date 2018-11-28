@@ -13,29 +13,55 @@
   <div class="phone">
     <div class="screenwrapper center">
 		<div class="sectitle timersc">
-				Time's up! Great job!</div>
-        <div class="timer">
+				Congratulations! You’ve saved an animal :)</div>
+        <div class="timer_focus">
 		<div class="settime"></div>
-			<svg class="circle">
-    <circle r="133" cx="140" cy="140"></circle>
-  </svg>
+			<img src="images/ocean.svg" />
+			<svg id="bar2" height="10" width="200">
+ 			 <line x1="0" y1="0" x2="200" y2="0" />
+			</svg> 
+			
+			<svg id="bar" height="10" width="200">
+ 			 <line  x1="0" y1="0" x2="200" y2="0"  />
+			</svg> 
+			
+			
 		  </div>
-      <div class="rndbtn_wrapper"> <a href="sc3.html" >
-        <div class="rnd_button cancel light">Cancel</div>
-        </a> <a href="sc4.html">
-        <div class="rnd_button start dark">Pause</div>
-        </a> </div>
-		<div class="btn_wrapper">
-		<a href="sc5.html">
+		
+      <div class="rndbtn_wrapper"> <a href="#">
+				<div id="quit" class="button outline">Quit</div>
+			</a> </div>
+		<div class="sectitle timersc des">
+		You would need 2 balloons to lift this animal up once it’s saved. Make a balloon now?</div>
+		<div class="btn_wrapper" id="btns">
+		<a href="sc6.html">
 				<div class="button dark">Blow the Balloon</div>
 					</a>
 		<a href="sc3.html">
-				<div class="button outline">Skip</div>
+				<div class="button outline">I'll prepare one later</div>
 			</a>
 		</div>
 
-
+	
+		
     </div>
+	  
+	  
+	  <div class="greybox">
+		<div class="alert">
+			Are you sure to quit? xx animal is waiting for you to save ;(
+			<div class="btn_wrapper">
+		<a href="#" id="goback">
+				<div class="button dark">Go back to saving animal</div>
+					</a>
+		<a href="sc3.html">
+				<div class="button outline">Save the animal another time</div>
+			</a>
+		</div>
+			</div>
+		</div>
+	  
+	  
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
