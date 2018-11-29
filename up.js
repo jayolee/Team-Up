@@ -312,6 +312,7 @@ function sc6() {
 	function balloondone() {
 		$('#balloon').attr('src',('images/balloon2.svg'));
 		$('.dots').css('display', 'none');
+		$('.bln_circle').css('display', 'none');
 		$('.timer').css({
 			'border': '0px',
 			'box-shadow': 'none'

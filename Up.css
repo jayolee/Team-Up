@@ -145,6 +145,7 @@ a{
 #balloon_on{
 	width:60px;
 	margin-bottom:20px;
+	margin-top:-40px;
 }
 #timer{
 	width:100px;
