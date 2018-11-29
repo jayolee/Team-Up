@@ -26,7 +26,7 @@ a{
 	text-align: center;
 }
 .bg{
-	width:100%; height:1200px; background:#000;
+	width:100%; height:1000px; background:#000;
 }
 #welcome{
 	margin-bottom:30px;
@@ -39,7 +39,7 @@ a{
 	background:linear-gradient( #ffffff, #ffffff, #FFFDF4);
 	margin: 0 auto;
 	position:relative;
-	top:0;
+	top:44px;
 	overflow:hidden;
 }
 .next_btn{
@@ -780,4 +780,133 @@ stroke-dashoffset: 0px;
 	color:#393939;
 	font-weight: 700;
 	z-index: 999;
+}
+/*report*/
+.report_section{
+margin:30px auto;	
+}
+.title{
+	width:100%;
+	position:relative;
+	font-size:24px;
+	color:#393939;
+	font-weight:700;
+	padding:0px 20px 14px;
+}
+.expand{
+	height:28px;
+	width:28px;
+	position:absolute;
+	right:20px;
+	top:0;
+	cursor:pointer;
+	
+	
+}
+.island{
+	transition:.3s;
+	width:100%;
+	height:300px;
+	position:relative;
+	background:linear-gradient(#D6F3FC,rgba(239,247,251,0))
+}
+.land{
+	background:linear-gradient(#8ba85b,#d0ed7b);
+	height:30%;
+	bottom:0;
+	width:100%;
+	position:absolute;
+}
+#rpda{
+	width:24%;
+	position:absolute;
+	bottom:20%;
+}
+#pbr{
+	width:60%;
+	bottom:5%;
+	position:absolute;
+	right:14%;
+}
+#bksm{
+	width:26%;
+	bottom:15%;
+	position: absolute;
+	right:2%;
+}
+.date{
+	width:90%;
+	display:flex;
+	border: 1px solid #A67241;
+	border-radius:5px;
+	margin:0 auto;
+}
+.datepicker{
+	width:25%;
+	text-align: center;
+	padding: 6px 0;
+	border:1px solid #a67241;
+	font-size:14px;
+}
+.datepicker.active{
+	background:#a67241;
+	color:#fff;
+}
+.backbutton{
+	padding:20px 0 0;
+	color:#E9974C;
+	font-size:17px;
+	display:flex;
+	flex-direction: row;
+	align-content: center;
+	
+}
+.backbutton div{
+	padding-top:4px;
+	padding-left:4px;
+}
+.icon{
+	display:inline;
+}
+.icon path{
+	stroke:#E9974C;
+}
+.weekrow{
+	position:relative;
+	margin:10px 0;
+	padding:0;
+		width:100%;
+	text-align: center;
+	font-weight:700;
+	color:#393939;
+	
+	
+}
+.arrow_button{
+	background:#a67241;
+	width:22px;
+	height:22px;
+	border-radius: 10px;
+	padding:1px; 
+	position:absolute;
+	top:0;
+	left:20px;
+	box-shadow: 0 0 8px #a67241;
+}
+.arrow_button .icon path{
+	stroke:#fff;
+	transform: translateX(-3px);
+}
+.reportcard{
+	width:90%;
+	border:1px solid #CEA41D;
+	border-radius: 6px;
+	height:200px; 
+	margin:0 auto;
+	box-shadow: 0 6px 20px rgba(253,238,199,.5);
+}
+.reportcard img{
+	position: absolute;
+	bottom:0;
+	
 }

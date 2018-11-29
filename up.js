@@ -333,3 +333,15 @@ function sc6() {
 	};
 
 }
+
+//report
+function report(){
+	$('.expand').click(function(){
+		$('.island').css({
+		'transform':'translateX(-218px) translateY(93px) rotate(-90deg)',
+		'width':'812px',
+			'height':'375px',
+			'z-index':'999',
+		});
+	})
+}
