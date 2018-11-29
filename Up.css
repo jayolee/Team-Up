@@ -39,7 +39,7 @@ a{
 	background:linear-gradient( #ffffff, #ffffff, #FFFDF4);
 	margin: 0 auto;
 	position:relative;
-	top:44px;
+	top:0;
 	overflow:hidden;
 }
 .next_btn{
@@ -361,7 +361,7 @@ position:relative;
 .timer{
 	width:276px;
 	height:276px;
-	border:10px solid #E9974C;
+	border:10px solid rgba(0,0,0,0);
 	box-shadow:0 6px 30px #FDEEC7;
 		border-radius:138px;
 	margin:0 auto;
@@ -525,10 +525,9 @@ stroke-dashoffset: 0px;
 	left:50%;
 	transform:translateX(-50%) rotateY(-180deg) rotateZ(-90deg);
 	position:absolute;
-	z-index: 1;
 }
 
-@keyframes steps{
+@keyframes bal_steps{
 	from{
 		stroke-dashoffset:0px;
 	}
@@ -637,6 +636,7 @@ stroke-dashoffset: 0px;
 		transform:translateY(-180%);
 	}
 }
+
 .bln_circle circle{
 	
 stroke-dasharray: 840px;
@@ -647,11 +647,16 @@ stroke-dashoffset: 0px;
 	animation: inhale linear 9s 3 forwards;
 	-webkit-animation: inhale linear 9s 3 forwards;
 }
+.timercir circle{
+	stroke:#E9974C;
+	stroke-width:10px;
+	fill:none;
+	animation: none;
+}
 .blk circle{
 	stroke:#ffce51;
-	
-	animation: steps linear 9s 3 forwards;
-	-webkit-animation: steps linear 9s 3 forwards;
+	animation: bal_steps linear 9s 3 forwards;
+	-webkit-animation: bal_steps linear 9s 3 forwards;
 	
 }
 .addani{
