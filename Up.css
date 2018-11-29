@@ -527,23 +527,7 @@ stroke-dashoffset: 0px;
 	position:absolute;
 	z-index: 1;
 }
-.bln_circle circle{
-	
-stroke-dasharray: 840px;
-stroke-dashoffset: 0px;
-	stroke:#FFE8A5;
-	stroke-width:10px;
-	fill:none;
-	animation: inhale linear 9s 3 forwards;
-	-webkit-animation: inhale linear 9s 3 forwards;
-}
-.blk circle{
-	stroke:#ffce51;
-	
-	animation: steps linear 9s 3 forwards;
-	-webkit-animation: steps linear 9s 3 forwards;
-	
-}
+
 @keyframes steps{
 	from{
 		stroke-dashoffset:0px;
@@ -652,6 +636,23 @@ stroke-dashoffset: 0px;
 	to{
 		transform:translateY(-180%);
 	}
+}
+.bln_circle circle{
+	
+stroke-dasharray: 840px;
+stroke-dashoffset: 0px;
+	stroke:#FFE8A5;
+	stroke-width:10px;
+	fill:none;
+	animation: inhale linear 9s 3 forwards;
+	-webkit-animation: inhale linear 9s 3 forwards;
+}
+.blk circle{
+	stroke:#ffce51;
+	
+	animation: steps linear 9s 3 forwards;
+	-webkit-animation: steps linear 9s 3 forwards;
+	
 }
 .addani{
 	animation: floating linear 3s forwards;
@@ -814,24 +815,29 @@ margin:30px auto;
 }
 .land{
 	background:linear-gradient(#8ba85b,#d0ed7b);
-	height:30%;
+	height:100px;
 	bottom:0;
 	width:100%;
 	position:absolute;
+}.animaldiv{
+	position:relative;
+	width:400px;
+	height:100%;
+	margin:0 auto;
 }
 #rpda{
-	width:24%;
+	width:90px;
 	position:absolute;
 	bottom:20%;
 }
 #pbr{
-	width:60%;
+	width:250px;
 	bottom:5%;
 	position:absolute;
 	right:14%;
 }
 #bksm{
-	width:26%;
+	width:96px;
 	bottom:15%;
 	position: absolute;
 	right:2%;
@@ -911,4 +917,10 @@ margin:30px auto;
 	position: absolute;
 	bottom:0;
 	
+}
+.bigger{
+	transform:translateX(-218px) translateY(93px) rotate(-90deg);
+		width:812px;
+			height:375px;
+			z-index:999;
 }

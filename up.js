@@ -334,15 +334,32 @@ function sc6() {
 	};
 
 }
-
+var cursize=0;
 //report
 function report(){
+	$('.phone').click(function(){
+	if($('.island').hasClass('bigger')){
+			$('.island').removeClass('bigger');
+			$('.title').css('opacity','1');
+		$('#graph').css('opacity','1');
+		$('.backbutton').css('opacity','1');
+	}
+	});
+	
 	$('.expand').click(function(){
-		$('.island').css({
-		'transform':'translateX(-218px) translateY(93px) rotate(-90deg)',
-		'width':'812px',
-			'height':'375px',
-			'z-index':'999',
-		});
-	})
-}
+		setTimeout(function(){
+			
+			$('.island').addClass('bigger');
+		$('.title').css('opacity','0');
+		$('#graph').css('opacity','0');
+		$('.backbutton').css('opacity','0');
+		
+		
+	},100);
+	}
+					   )
+	
+	
+		}
+	
+
