@@ -212,7 +212,8 @@ setTimeout(function(){
 }
 
 function sc4() {
-	let curpos = localStorage.getItem("curpos");
+	//let curpos = localStorage.getItem("curpos");
+	let curpos=9;
 	let timer = curpos;
 	let isPaused = false;
 

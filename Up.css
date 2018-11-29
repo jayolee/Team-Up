@@ -535,11 +535,13 @@ stroke-dashoffset: 0px;
 	stroke-width:10px;
 	fill:none;
 	animation: inhale linear 9s 3 forwards;
+	-webkit-animation: inhale linear 9s 3 forwards;
 }
 .blk circle{
 	stroke:#ffce51;
 	
 	animation: steps linear 9s 3 forwards;
+	-webkit-animation: steps linear 9s 3 forwards;
 	
 }
 @keyframes steps{
