@@ -60,8 +60,8 @@ function sc1() {
 
 
 function sc2() {
-	let animals = ['bkspmonkey.svg', 'polarbear.svg', 'red panda.svg', 'fin-whale.svg'];
-	let curanimal = Math.floor(Math.random() * 4);
+	let animals = ['bkspmonkey.svg', 'polarbear.svg', 'red panda.svg', 'fin-whale.svg','emperor-penguin.svg','narwhal.svg'];
+	let curanimal = Math.floor(Math.random() * 6);
 	$('.titleimg img').attr('src', 'images/' + animals[curanimal]);
 
 }
@@ -133,8 +133,8 @@ function timer() {
 					top: Y + radius - sliderHeight / 2
 				});
 
-				var roundDeg = Math.round(deg);
-
+				var roundDeg = Math.abs(Math.round(deg));
+				console.log("work?");
 				$degrees.html(roundDeg + '&deg;');
 				$('#timevalue').val(roundDeg);
 
@@ -190,7 +190,7 @@ function sc3() {
 				angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
 				angle=Math.round(angle/40) * 40;
 
-				angle +=90;
+				angle *=(-1);
 				time=Math.round(angle/40) * 10;
 				
 			}
@@ -202,8 +202,8 @@ function sc3() {
 //				
 //				new_left=128-new_left;
 				angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
-				angle=(-90-angle);
-				time=Math.round(angle/40) * 10;
+				
+				time=Math.round((360+angle)/40) * 10;
 			}
 			new_top += 128;
 		}
@@ -217,6 +217,7 @@ function sc3() {
 //					new_left +=128;
 					angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
 					angle=Math.abs(Math.round(angle/40) * 40);
+					angle=180-angle;
 					time=Math.round(angle/40) * 10;
 					
 				}
@@ -227,7 +228,7 @@ function sc3() {
 //				
 //				new_left=128-new_left;
 					angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
-					angle *= (-1);
+					angle = 180-angle;
 					time=Math.round(angle/40) * 10;
 				}
 				
@@ -401,9 +402,9 @@ function report(){
 					   
 	$('.datepicker').click(function(){
 		let timeinformation={
-			"week":"11.5",
-			"month":"24",
-			"year":"704",
+			"Week":"11.5",
+			"Month":"24",
+			"Year":"704",
 		}
 		let timeid= $(this).attr('id');
 		$('.datepicker').removeClass('active');

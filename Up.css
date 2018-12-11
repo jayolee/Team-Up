@@ -79,6 +79,10 @@ a{
 	font-size:30px;
 	margin-bottom:60px;
 }
+.status{
+	margin-bottom:40px;
+	font-size:24px;
+}
 .name{
 	font-weight:400;
 }
@@ -921,6 +925,7 @@ margin:30px auto;
 	padding: 6px 0;
 	border:1px solid #a67241;
 	font-size:14px;
+	cursor:pointer;
 }
 .datepicker.active{
 	background:#a67241;
