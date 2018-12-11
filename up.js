@@ -146,69 +146,109 @@ function sc3() {
 
 
 
-setTimeout(function(){
-		$('#settime').text("00:10");
-	},400);
 	
-	setTimeout(function(){
-	$('#settime').text("00:20");
-	},1300);
-	let curpos = 0;
-	let seclist = $('#sec').find('li');
+	/*let original_position=$('#knob').position();
+	let original_top=original_position.top;
+	let original_left=original_position.left;
 
-	$('#sec li').click(function () {
-		let list = $(this).text();
-		list = parseInt(list);
+	let circle_position=$('.time_control').position();
+	let circle_top=circle_position.top + 128;
+	let circle_left=circle_position.left + 128;
+*/
+		
+	let win=($(document).width())/2;
+	let blkmargin=win-137.5;
+	let screentop=$('.screenwrapper').position();
+	screentop=screentop.top;
+	let r=128;
+	
+	let angle=0;
+	
+	
+	$('#knob').mousedown(function(){
+		$('.phone').mousemove(function(){
+		
+		let curdeg=$('.time_control').css('transform');
+		var posX = window.event.clientX;
+    	var posY = window.event.clientY;
+		let x=posX;
+		let y=posY-screentop;
 
-		let btnlist = $(".rndbtn_wrapper a");
-		if (list != 0) {
-			$(btnlist[1]).attr('href', 'sc4.html');
-		} else {
-			$(btnlist[1]).attr('href', '#');
-		}
+			let new_left=0;
+			let new_top=0;
+			
+		let time=0;
+			
+		if(y>128){
+			y -=128;
+			
+			if(x>win){
+				x=posX-r-blkmargin-59.5;
+				/*new_left=(128 * x)/ Math.sqrt(x*x + y*y);
+				new_top=(y*new_left)/x;	
+				new_left +=128;*/
+				angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
+				angle=Math.round(angle/40) * 40;
 
-		if (list < 6) {
-			if (list > curpos) {
-				let difference = .4;
-				for (i = curpos; i < list; i++) {
-					$('#sec').animate({
-						'top': '-=30'
-					});
-					var timedFn = (function (x) {
-						return function () {
-							$('#sec li').removeClass('active');
-							$(seclist[x + 1]).addClass('active');
-						}
-					})(i);
-
-					setTimeout(timedFn, difference * 400);
-					difference += 1;
-					/*
-					setTimeout(function(){
-						console.log(i);
-						$('#sec li').removeClass('active');
-						$(seclist[i+1]).addClass('active');
-					},i*1000);
-					*/
-				}
-				curpos = list;
-			} else if (list < curpos) {
-				let toppx = 30 * (curpos - list);
-
-				for (i = curpos; i > list; i--) {
-					$('#sec').animate({
-						'top': '+=30'
-					});
-					$('#sec li').removeClass('active');
-					$(seclist[i - 1]).addClass('active');
-				}
-
-				curpos = list;
+				angle +=90;
+				time=Math.round(angle/40) * 10;
+				
 			}
-			localStorage.setItem("curpos", curpos);
+			else{
+				x=win-posX;
+				
+//				new_left=(128 * x)/ Math.sqrt(x*x + y*y);
+//				new_top=(y*new_left)/x;	
+//				
+//				new_left=128-new_left;
+				angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
+				angle=(-90-angle);
+				time=Math.round(angle/40) * 10;
+			}
+			new_top += 128;
 		}
-
+			else{
+				y=screentop+128-posY;
+				if(x>win){
+					x=posX-r-blkmargin-49.5;
+					
+//					new_left=(128 * x)/ Math.sqrt(x*x + y*y);
+//					new_top=128-((y*new_left)/x);	
+//					new_left +=128;
+					angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
+					angle=Math.abs(Math.round(angle/40) * 40);
+					time=Math.round(angle/40) * 10;
+					
+				}
+				else{
+					x=win-posX;
+//					new_left=(128 * x)/ Math.sqrt(x*x + y*y);
+//					new_top=128-((y*new_left)/x)-15;	
+//				
+//				new_left=128-new_left;
+					angle = Math.atan2(y - 128, x - 128) * 180 / Math.PI;
+					angle *= (-1);
+					time=Math.round(angle/40) * 10;
+				}
+				
+			}
+			
+			
+		//$('#knob').css('left',new_left);
+		//	$('#knob').css('top',new_top);
+			$('#settime').text(time+":00");
+			$('.time_control').css('transform','rotate('+angle+'deg)');
 	});
+	});
+		$(document).mouseup(function(){
+		$('.phone').off("mousemove");
+				
+	});
+
+	
+	
+	
+
 }
 
 function sc4() {
@@ -357,8 +397,30 @@ function report(){
 		
 		
 	},100);
-	}
-					   )
+	});
+					   
+	$('.datepicker').click(function(){
+		let timeinformation={
+			"week":"11.5",
+			"month":"24",
+			"year":"704",
+		}
+		let timeid= $(this).attr('id');
+		$('.datepicker').removeClass('active');
+		$(this).addClass('active');
+		$('#reporttype').attr('src','images/report_'+timeid+'.svg');
+		if(timeid=='day'){
+			$('.week').text('Today');
+			$('.timeinfo').css('opacity',0);
+		}
+		else{
+		$('.week').text('This '+timeid)
+			$('.timeinfo').css('opacity',1);
+			$('.bold').text(timeinformation[timeid]);
+		}
+		
+	})
+					   
 	
 	
 		}
